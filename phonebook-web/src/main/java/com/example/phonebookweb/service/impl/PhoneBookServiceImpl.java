@@ -3,8 +3,6 @@ package com.example.phonebookweb.service.impl;
 import com.example.phonebookweb.entity.PhoneBook;
 import com.example.phonebookweb.repository.PhoneBookRepository;
 import com.example.phonebookweb.service.PhoneBookService;
-import org.apache.commons.lang3.ObjectUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,8 +23,8 @@ public class PhoneBookServiceImpl implements PhoneBookService {
     }
 
     @Override
-    public PhoneBook updatePhoneBook(PhoneBook phoneBook, Integer id) {
-        PhoneBook oldPhoneBook = repository.findById(id).orElse(null);
+    public PhoneBook updatePhoneBook(PhoneBook phoneBook) {
+        PhoneBook oldPhoneBook = repository.findById(phoneBook.getId()).orElse(null);
         if(Objects.nonNull(oldPhoneBook)){
             if(!phoneBook.getName().isBlank() && !phoneBook.getName().equalsIgnoreCase(oldPhoneBook.getName())){
                 oldPhoneBook.setName(phoneBook.getName());

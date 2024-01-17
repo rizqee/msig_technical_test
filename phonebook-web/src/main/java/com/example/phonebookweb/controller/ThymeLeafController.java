@@ -5,10 +5,7 @@ import com.example.phonebookweb.service.PhoneBookService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Controller
 public class ThymeLeafController {
@@ -39,8 +36,7 @@ public class ThymeLeafController {
     }
     @PostMapping("/update")
     public String updatePhoneBook(PhoneBook phoneBook,Model model){
-        Integer id = phoneBook.getId();
-        phoneBookService.updatePhoneBook(phoneBook,id);
+        phoneBookService.updatePhoneBook(phoneBook);
         return "redirect:/";
     }
     @DeleteMapping("/delete/{id}")

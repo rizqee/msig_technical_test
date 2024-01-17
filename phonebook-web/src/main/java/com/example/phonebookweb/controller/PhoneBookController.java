@@ -27,8 +27,8 @@ public class PhoneBookController {
         return phoneBookService.fetchPhoneBookByID(id);
     }
     @PutMapping("/update")
-    public PhoneBook updatePhoneBook(@Valid@RequestBody PhoneBook phoneBook,Integer id){
-        return phoneBookService.updatePhoneBook(phoneBook,id);
+    public PhoneBook updatePhoneBook(@Valid@RequestBody PhoneBook phoneBook){
+        return phoneBookService.updatePhoneBook(phoneBook);
     }
     @DeleteMapping("/delete/{id}")
     public void deletePhoneBook(@Valid@PathVariable("id") Integer id){

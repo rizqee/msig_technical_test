@@ -7,7 +7,7 @@ import java.util.List;
 public interface PhoneBookService {
     public PhoneBook addNewPhoneBook(PhoneBook phoneBook);
     public List<PhoneBook> fetchAllPhoneBook();
-    public PhoneBook updatePhoneBook(PhoneBook phoneBook,Integer id);
+    public PhoneBook updatePhoneBook(PhoneBook phoneBook);
     public void deletePhoneBook(Integer id);
     public PhoneBook fetchPhoneBookByID(Integer id);
 }
