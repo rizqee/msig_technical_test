@@ -788,3 +788,9 @@ select next value for phone_book_seq [90036-224]
 	at java.base/java.lang.Thread.run(Thread.java:842)
 2024-01-17 22:00:02.498780+07:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2024-01-17 23:49:28.138357+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2024-01-17 23:55:40.619012+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2024-01-17 23:58:25.521915+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]

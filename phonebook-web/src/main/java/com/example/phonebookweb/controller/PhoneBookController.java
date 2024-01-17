@@ -30,8 +30,8 @@ public class PhoneBookController {
     public PhoneBook updatePhoneBook(@Valid@RequestBody PhoneBook phoneBook,Integer id){
         return phoneBookService.updatePhoneBook(phoneBook,id);
     }
-    @DeleteMapping("/delete")
-    public void deletePhoneBook(@Valid@RequestBody Integer id){
+    @DeleteMapping("/delete/{id}")
+    public void deletePhoneBook(@Valid@PathVariable("id") Integer id){
         phoneBookService.deletePhoneBook(id);
     }
 }

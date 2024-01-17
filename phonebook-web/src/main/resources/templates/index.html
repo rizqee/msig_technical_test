@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phone Book Website </title>
+</head>
+<body>
+<div th:switch="${phonebooks}">
+    <h2 th:case="null">Phone Book Empty!</h2>
+    <div th:case="*">
+        <h2>Phone Numbers</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="phonebook : ${phonebooks}">
+                <td th:text="${phonebook.name}"></td>
+                <td th:text="${phonebook.phoneNumber}"></td>
+                <td th:text="${phonebook.address}"></td>
+                <td><a th:href="@{/update/{id}(id=${phonebook.id})}">Edit</a></td>
+                <td><a th:href="@{/delete/{id}(id=${phonebook.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/add-form">Add a new entry to phone book</a></p>
+</div>
+</body>
+</html>

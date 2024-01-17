@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Phonebook form </title>
+</head>
+<body>
+<form action="#" th:action="@{/add}" th:object="${phonebook}" method="post">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    <label for="phoneNumber">Phone Number</label>
+    <input type="text" th:field="*{phoneNumber}" id="phoneNumber" placeholder="08xx">
+    <span th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></span>
+    <label for="address">address</label>
+    <input type="text" th:field="*{address}" id="address" placeholder="">
+    <span th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></span>
+    <input type="submit" value="Add Instance">
+</form>
+</body>
+</html>
